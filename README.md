@@ -36,7 +36,8 @@ when new data is input auto generated the value
    Query query=session.createQuery(avereage);
    Double avg= (Double) query.uniqueResult();
    System.out.println(avg);
-5)   String hql="Select a, COUNT (b) from Author a LEFT JOIN a.book b GROUP BY a";
+   
+6)   String hql="Select a, COUNT (b) from Author a LEFT JOIN a.book b GROUP BY a";
      Query query= session.createQuery(hql);
      List<Object[]> rst=query.list();
      for(Object[] objects:rst){
@@ -45,19 +46,19 @@ when new data is input auto generated the value
      System.out.println("author"+author.getName());
      System.out.println("bookCount"+bookCount);
      } 
-6)  String Address= "America"
+7)  String Address= "America"
     String hql="select a.name from Author a where a.country=:address";
     Query query=session.createQuery(hql);
     query.setParameter("address",Address)
     int rst=query.executeUpdate();
 
-7)
+8)
     Author  has a collection that holds multiple instance of Book  So we can say Author and Book has bidirectional  one to Many relationship
    @JoinColumn annotation to specify the mapping of a foreign key column in a relationship between 
    Book entity and Author entity. The @JoinColumn annotation is applied on the owning side(Book) of the association to define
    the foreign key column name and other attributes which are related to the join column.
 
-8) String hql = "SELECT AVG (b.id) FROM Book b";
+9) String hql = "SELECT AVG (b.id) FROM Book b";
     Query query = session.createQuery(hql);
     Double avg = (Double) query.uniqueResult();
         System.out.println("Average Number of Books: " + avg);
